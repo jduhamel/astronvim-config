@@ -77,31 +77,43 @@ return {
   -- ----------------------------------------------
   -- Packs
   -- Treesitter: clojure , Lsp: clojure-lsp, Lint/format:
-  { import = "astrocommunity.pack.clojure" },
-  -- Configure parinfer with different mode, i.e. paren, smart, indent (default)
+  -- { import = "astrocommunity.pack.clojure" },
+  -- -- Configure parinfer with different mode, i.e. paren, smart, indent (default)
   -- {
   --   "gpanders/nvim-parinfer",
   --   ft = { "clojure" },
   --   config = function()
   --     vim.g.parinfer_force_balance = true
   --     vim.g.parinfer_comment_chars = ";;"
-  --     vim.g.parinfer_mode = "paren"
+  --     vim.g.parinfer_mode = "smart"
   --   end,
   -- },
-  -- Treesitter: dockerfile , Lsp: dockerls & docker_compose_language_service, Lint/format: hadolint
+  -- -- Treesitter: dockerfile , Lsp: dockerls & docker_compose_language_service, Lint/format: hadolint
   { import = "astrocommunity.pack.docker" },
   -- Treesitter: json & jsonc, Lsp: jsonls, Lint/format: stylua
   { import = "astrocommunity.pack.json" },
   -- Treesitter: lua, Lsp: lua_ls, Lint/format: stylua
   { import = "astrocommunity.pack.lua" },
-
+  -- Tressitter: python, Lsp: (pyright,ruff_lsp), Lint/format: black
+  { import = "astrocommunity.pack.python-ruff" },
+  -- Treesitter: go, Lsp: gopls, Lint/format: gofumpt
+  { import = "astrocommunity.pack.go" },
+  -- Treesitter: dart, Lsp: dartls, Lint/format: dart
+  { import = "astrocommunity.pack.dart" },
+  -- Treesitter: ansible, Lsp: ansiblels, Lint/format: ansible-lint
+  { import = "astrocommunity.pack.ansible" },
   -- Pack not used as prettierd too agressive with format
   -- Treesitter: markdown & markdown_inline, Lsp: marksman, Lint/format: prettierd
-  -- { import = "astrocommunity.pack.markdown" },
-  -- Treesitter: markdown & markdown_inline, Lsp: marksman, Lint/format: prettierd
-  -- { import = "astrocommunity.pack.yaml" },
-  -- ----------------------------------------------
+  { import = "astrocommunity.pack.swift" },
 
+  -- Treesitter: markdown & markdown_inline, Lsp: marksman, Lint/format: prettierd
+  { import = "astrocommunity.pack.yaml" },
+
+  -- Need sudo or I go crazy
+  { import = "astrocommunity.editing-support.suda-vim" },
+  -- ----------------------------------------------
+  -- Rainbow parens
+  { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   -- ----------------------------------------------
   -- Project
 
@@ -133,6 +145,8 @@ return {
   -- Utility
   -- rich command prompt
   { import = "astrocommunity.utility.noice-nvim" },
+  { import = "astrocommunity.completion.copilot-lua" },
+  { import = "astrocommunity.completion.copilot-lua-cmp" },
 
   -- Version Control
   -- defined in plugins/git.lua
