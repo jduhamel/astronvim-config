@@ -14,7 +14,7 @@ return {
 
     -- Save prompting for file name
     ["<leader>W"] = { ":write ", desc = "Save as file" },
-    ["<leader>W!"]  = { ":SudaWrite<CR>", desc = "Suda Write", },
+    ["<leader>W!"] = { ":SudaWrite<CR>", desc = "Suda Write" },
     -- mappings seen under group name "Buffer"
     ["<leader>b"] = { name = "Buffers" },
     ["<leader>bt"] = { name = "Tabs" },
@@ -69,6 +69,26 @@ return {
     ["<leader>xri"] = { "<cmd>SnipInfo<cr>", desc = "⚙ SnipInfo" },
     ["<leader>xR"] = { "<cmd>SnipRunOperator<cr>", desc = "⚙ SnipRunOperator" },
     ["<leader>xt"] = { "<cmd>Task<cr>", desc = "⚙ Task" },
+
+    -- Test keys
+    ["<leader>T"] = { name = " Tests" },
+    ["<leader>To"] = { "<cmd>lua require('neotest').output.open({ enter = true, short = false })<cr>", desc = "Output" },
+    ["<leader>Tr"] = { "<cmd>lua require('neotest').run.run({env=require('user.ntest').get_env()})<cr>", desc = "Run" },
+    ["<leader>Ta"] = { "<cmd>lua require('user.ntest').run_all()<cr>", desc = "Run All" },
+    ["<leader>Tc"] = { "<cmd>lua require('user.ntest').cancel()<cr>", desc = "Cancel" },
+       ["<leader>TR"] = { "<cmd>lua require('user.ntest').run_file_sync()<cr>", desc = "Run Async" },
+    ["<leader>Ts"] = { "<cmd>lua require('neotest').summary.toggle()<cr>", desc = "Summary" },
+    ["<leader>Tn"] = {
+      "<cmd>lua require('neotest').jump.next({ status = 'failed' })<cr>",
+      desc = "jump to next failed",
+    },
+    ["<leader>Tp"] = {
+      "<cmd>lua require('neotest').jump.prev({ status = 'failed' })<cr>",
+      desc = "jump to previous failed",
+    },
+    ["<leader>Td"] = { "<cmd>lua require('neotest').run.run({ strategy = 'dap' })<cr>", desc = "Dap Run" },
+    ["<leader>Tx"] = { "<cmd>lua require('neotest').run.stop()<cr>", desc = "Stop" },
+    ["<leader>Tw"] = { "<cmd>lua require('neotest').watch.watch()<cr>", desc = "Watch" },
   },
   t = {
     -- setting a mapping to false will disable it
@@ -77,7 +97,7 @@ return {
 
   v = {
     ["f"] = { "<cmd>SnipRun<cr>", silent = true, desc = "SnipRun" },
---    vim.api.nvim_set_keymap('v', 'f', '<Plug>SnipRun', {silent = true})
+    --    vim.api.nvim_set_keymap('v', 'f', '<Plug>SnipRun', {silent = true})
 
     -- Use panadoc to format a visually selected table
     -- https://jcuenod.github.io/bibletech/2023/03/14/formatting-md-tables-in-neovim/
