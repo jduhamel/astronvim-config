@@ -20,6 +20,9 @@ return {
   -- code runner
   -- Overseer task runner & job management
   { import = "astrocommunity.code-runner.overseer-nvim" },
+  { import = "astrocommunity.code-runner.sniprun" },
+  { import = "astrocommunity.test.neotest" },
+  { import = "astrocommunity.test.nvim-coverage" },
 
   -- ----------------------------------------------
   -- color
@@ -105,7 +108,6 @@ return {
   -- Pack not used as prettierd too agressive with format
   -- Treesitter: markdown & markdown_inline, Lsp: marksman, Lint/format: prettierd
   { import = "astrocommunity.pack.swift" },
-
   -- Treesitter: markdown & markdown_inline, Lsp: marksman, Lint/format: prettierd
   { import = "astrocommunity.pack.yaml" },
 

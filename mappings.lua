@@ -14,7 +14,7 @@ return {
 
     -- Save prompting for file name
     ["<leader>W"] = { ":write ", desc = "Save as file" },
-
+    ["<leader>W!"]  = { ":SudaWrite<CR>", desc = "Suda Write", },
     -- mappings seen under group name "Buffer"
     ["<leader>b"] = { name = "Buffers" },
     ["<leader>bt"] = { name = "Tabs" },
@@ -65,6 +65,10 @@ return {
     -- Code Runner
     ["<leader>x"] = { name = "☑ Tasks" },
     ["<leader>xo"] = { "<cmd>OverseerRun<cr>", desc = "⚙ Overseer Run" },
+    ["<leader>xrr"] = { "<cmd>SnipRun<cr>", desc = "⚙ SnipRun" },
+    ["<leader>xri"] = { "<cmd>SnipInfo<cr>", desc = "⚙ SnipInfo" },
+    ["<leader>xR"] = { "<cmd>SnipRunOperator<cr>", desc = "⚙ SnipRunOperator" },
+    ["<leader>xt"] = { "<cmd>Task<cr>", desc = "⚙ Task" },
   },
   t = {
     -- setting a mapping to false will disable it
@@ -72,6 +76,8 @@ return {
   },
 
   v = {
+    ["f"] = { "<cmd>SnipRun<cr>", silent = true, desc = "SnipRun" },
+--    vim.api.nvim_set_keymap('v', 'f', '<Plug>SnipRun', {silent = true})
 
     -- Use panadoc to format a visually selected table
     -- https://jcuenod.github.io/bibletech/2023/03/14/formatting-md-tables-in-neovim/
