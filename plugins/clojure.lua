@@ -8,6 +8,7 @@ return {
       local paredit = require("nvim-paredit")
       require("parpar").setup {
       paredit = {
+          filetypes = { "clojure", "lisp", "scheme", "edn" },
         -- pass any nvim-paredit options here
         extensions = {
           commonlisp = {

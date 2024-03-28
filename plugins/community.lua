@@ -105,6 +105,8 @@ return {
   { import = "astrocommunity.pack.dart" },
   -- Treesitter: ansible, Lsp: ansiblels, Lint/format: ansible-lint
   { import = "astrocommunity.pack.ansible" },
+  -- Treesitter: rust LSP:
+  { import = "astrocommunity.pack.rust" },
   -- Pack not used as prettierd too agressive with format
   -- Treesitter: markdown & markdown_inline, Lsp: marksman, Lint/format: prettierd
   { import = "astrocommunity.pack.swift" },
@@ -147,6 +149,7 @@ return {
   -- Utility
   -- rich command prompt
   { import = "astrocommunity.utility.noice-nvim" },
+  { import = "astrocommunity.completion.cmp-cmdline" },
   { import = "astrocommunity.completion.copilot-lua" },
   { import = "astrocommunity.completion.copilot-lua-cmp" },
 
